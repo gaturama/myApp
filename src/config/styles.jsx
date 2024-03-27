@@ -5,7 +5,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: "center",
         justifyContent: "center",
-    }
-})
+    },
+    innerContainer: {
+        padding: 20,
+    },
+    selfCenter: {
+        fontSize: 20,
+        alignSelf: "center",
+    },
+});
 
 export default styles
