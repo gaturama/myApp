@@ -1,22 +1,28 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { View } from "react-native";
+import auth, { db } from "../config/InitialApp";
+import { doc, setDoc } from "firebase/firestore";
+import { View } from "native-base";
 import styles from "../config/styles";
 import { Image } from "expo-image";
-import { Text, TextInput, Button } from 'react-native-paper';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import auth from '../config/InitialApp';
+import { Button, Text, TextInput } from "react-native-paper";
 
-
-export default function LoginScreen({ navigation }) {
+export default function CadastroScreen({ navigation }) {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
-    const login = async () => {
-        try{
-            const user = await signInWithEmailAndPassword(auth, email, senha);
-            console.log(user);
-            navigation.navigate("HomeScreen");
-        }catch (error) {
+    const cadastroUsuario = async () => {
+        try {
+            const usuario = await createUserWithEmailAndPassword(auth, email, senha);
+            const uid = await usuario.user.uid;
+            await setDoc(doc(db, "usuarios", uid), {
+                name: nome,
+                email: email,
+            });
+
+            navigation.navigate("LoginScreen");
+        } catch (error) {
             console.log(error);
         }
     };
@@ -24,23 +30,28 @@ export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
-                <Image
+                <Image>
                     source={require("../assets/logo.png")}
                     style={{ width: 50, height: 50, alignSelf: "center" }}
-                />
-
+                </Image>
                 <Text variant="headlineLarge" style={styles.selfCenter}>
-                 Login
+                    Cadastre-se
                 </Text>
-            
 
+                <TextInput
+                    label="Nome"
+                    mode="outlined"
+                    value={name}
+                    onChangeText={setName}
+                />
                 <TextInput
                     label="Email"
                     mode="outlined"
                     keyboardType="email-address"
                     value={email}
-                    onChangeText={setEmail}
+                    onChange={setEmail}
                 />
+
                 <TextInput
                     label="Senha"
                     mode="outlined"
@@ -48,9 +59,7 @@ export default function LoginScreen({ navigation }) {
                     value={senha}
                     onChangeText={setSenha}
                 />
-                <Button onPress={() => navigation.navigate("CadastroScreen")}>
-                    Cadastre-se
-                </Button>
+
                 <Button
                     mode="outlined"
                     style={{
@@ -58,9 +67,10 @@ export default function LoginScreen({ navigation }) {
                         maxWidth: 100,
                         alignSelf: "flex-end",
                     }}
-                    onPress={login}
+
+                    onPress={cadastroUsuario}
                 >
-                    Entrar
+                    Cadastrar
                 </Button>
             </View>
         </View>
