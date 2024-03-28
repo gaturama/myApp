@@ -7,6 +7,7 @@ import styles from "../config/styles";
 import { Image } from "expo-image";
 import { Button, Text, TextInput } from "react-native-paper";
 
+
 export default function CadastroScreen({ navigation }) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ export default function CadastroScreen({ navigation }) {
         <View style={styles.container}>
             <View style={styles.innerContainer}>
                 <Image>
-                    source={require("../assets/logo.png")}
+                    
                     style={{ width: 50, height: 50, alignSelf: "center" }}
                 </Image>
                 <Text variant="headlineLarge" style={styles.selfCenter}>

@@ -7,6 +7,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import auth from '../config/InitialApp';
 
 
+
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -25,7 +26,7 @@ export default function LoginScreen({ navigation }) {
         <View style={styles.container}>
             <View style={styles.innerContainer}>
                 <Image
-                    source={require("../assets/logo.png")}
+                    
                     style={{ width: 50, height: 50, alignSelf: "center" }}
                 />
 
