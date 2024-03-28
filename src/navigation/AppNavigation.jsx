@@ -22,6 +22,7 @@ export default function AppNavigation() {
                     component={CadastroScreen}
                     options={{
                         title: "Cadastrar-se",
+                        headerShown: false,
                     }}                
                 />
                 <Stack.Screen 

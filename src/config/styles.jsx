@@ -13,6 +13,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         alignSelf: "center",
     },
+    justify: {
+        marginLeft: 45,
+        marginTop: 100,
+        width: 300,
+        height: 200,
+    }
 });
 
 export default styles

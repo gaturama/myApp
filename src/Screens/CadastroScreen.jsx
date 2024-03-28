@@ -31,10 +31,6 @@ export default function CadastroScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
-                <Image>
-                    
-                    style={{ width: 50, height: 50, alignSelf: "center" }}
-                </Image>
                 <Text variant="headlineLarge" style={styles.selfCenter}>
                     Cadastre-se
                 </Text>

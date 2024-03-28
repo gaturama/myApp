@@ -6,18 +6,16 @@ import { Text, TextInput, Button } from 'react-native-paper';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import auth from '../config/InitialApp';
 
-
-
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
     const login = async () => {
-        try{
+        try {
             const user = await signInWithEmailAndPassword(auth, email, senha);
             console.log(user);
             navigation.navigate("HomeScreen");
-        }catch (error) {
+        } catch (error) {
             console.log(error);
         }
     };
@@ -25,15 +23,9 @@ export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
-                <Image
-                    
-                    style={{ width: 50, height: 50, alignSelf: "center" }}
-                />
-
                 <Text variant="headlineLarge" style={styles.selfCenter}>
-                 Login
+                    Login
                 </Text>
-            
 
                 <TextInput
                     label="Email"
