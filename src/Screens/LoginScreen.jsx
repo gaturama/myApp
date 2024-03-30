@@ -50,6 +50,7 @@ export default function LoginScreen({ navigation }) {
                         marginTop: 10,
                         maxWidth: 100,
                         alignSelf: "flex-end",
+                        backgroundColor: "white"
                     }}
                     onPress={login}
                 >

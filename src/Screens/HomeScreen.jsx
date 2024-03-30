@@ -8,7 +8,6 @@ const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 export default function HomeScreen() {
     return (
         <View styles={styles.container}> 
-            <Text>Página Inicial</Text>
 
             <Card style={styles.justify}>
                 {/* <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} /> */}

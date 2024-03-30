@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: "center",
         justifyContent: "center",
+        backgroundColor: "#1c1c1e",
     },
     innerContainer: {
         padding: 20,
@@ -12,6 +13,7 @@ const styles = StyleSheet.create({
     selfCenter: {
         fontSize: 20,
         alignSelf: "center",
+        color: "white",
     },
     justify: {
         marginLeft: 45,
