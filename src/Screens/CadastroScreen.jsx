@@ -2,11 +2,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import auth, { db } from "../config/InitialApp";
 import { doc, setDoc } from "firebase/firestore";
-import { View } from "native-base";
+import { View } from "react-native";
 import styles from "../config/styles";
 import { Image } from "expo-image";
 import { Button, Text, TextInput } from "react-native-paper";
-
 
 export default function CadastroScreen({ navigation }) {
     const [name, setName] = useState("");
@@ -18,7 +17,7 @@ export default function CadastroScreen({ navigation }) {
             const usuario = await createUserWithEmailAndPassword(auth, email, senha);
             const uid = await usuario.user.uid;
             await setDoc(doc(db, "usuarios", uid), {
-                name: nome,
+                name: name,
                 email: email,
             });
 
@@ -31,7 +30,16 @@ export default function CadastroScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
-                <Text variant="headlineLarge" style={styles.selfCenter}>
+                <Image
+                    source={require("../assets/fogo.png")}
+                    style={{
+                        width: 50,
+                        height: 50,
+                        alignSelf: "center",
+                    }}
+
+                />
+                <Text style={styles.selfCenter}>
                     Cadastre-se
                 </Text>
 
@@ -41,12 +49,13 @@ export default function CadastroScreen({ navigation }) {
                     value={name}
                     onChangeText={setName}
                 />
+
                 <TextInput
                     label="Email"
                     mode="outlined"
                     keyboardType="email-address"
                     value={email}
-                    onChange={setEmail}
+                    onChangeText={setEmail}
                 />
 
                 <TextInput
@@ -61,8 +70,9 @@ export default function CadastroScreen({ navigation }) {
                     mode="outlined"
                     style={{
                         marginTop: 10,
-                        maxWidth: 100,
+                        maxWidth: 150,
                         alignSelf: "flex-end",
+                        backgroundColor: "white",
                     }}
 
                     onPress={cadastroUsuario}

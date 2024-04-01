@@ -23,8 +23,16 @@ export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
+                <Image
+                    source={require("../assets/fogo.png")}
+                    style={{
+                        width: 50,
+                        height: 50,
+                        alignSelf: "center",
+                    }}
+                />
                 <Text variant="headlineLarge" style={styles.selfCenter}>
-                    Login
+                    Bem-vindo ao FireStorm
                 </Text>
 
                 <TextInput
