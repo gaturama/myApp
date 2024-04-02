@@ -24,15 +24,15 @@ export default function LoginScreen({ navigation }) {
         <View style={styles.container}>
             <View style={styles.innerContainer}>
                 <Image
-                    source={require("../assets/fogo.png")}
+                    source={require("../assets/duck.png")}
                     style={{
-                        width: 50,
-                        height: 50,
+                        width: 65,
+                        height: 65,
                         alignSelf: "center",
                     }}
                 />
                 <Text variant="headlineLarge" style={styles.selfCenter}>
-                    Bem-vindo ao FireStorm
+                    Welcome to the Duck's Page
                 </Text>
 
                 <TextInput
@@ -41,6 +41,10 @@ export default function LoginScreen({ navigation }) {
                     keyboardType="email-address"
                     value={email}
                     onChangeText={setEmail}
+                    style={{
+                        marginTop: 10,
+                        marginBottom: 10,
+                    }}
                 />
                 <TextInput
                     label="Senha"
@@ -49,7 +53,14 @@ export default function LoginScreen({ navigation }) {
                     value={senha}
                     onChangeText={setSenha}
                 />
-                <Button onPress={() => navigation.navigate("CadastroScreen")}>
+                <Button onPress={() => navigation.navigate("CadastroScreen")}
+                    style={{
+                        marginTop: 10,
+                        maxWidth: 130,
+                        alignSelf: "center",
+                        backgroundColor: "white"
+                    }}
+                >
                     Cadastre-se
                 </Button>
                 <Button

@@ -17,10 +17,10 @@ const styles = StyleSheet.create({
     },
     justify: {
         marginLeft: 45,
-        marginTop: 100,
+        marginTop: 50,
         width: 300,
         height: 200,
-        marginBottom: 50,
+        marginBottom: 210,
     },
 });
 

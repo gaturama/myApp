@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import LoginScreen from '../Screens/LoginScreen';
 import CadastroScreen from "../Screens/CadastroScreen";
 import HomeScreen from "../Screens/HomeScreen";
+
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigation() {

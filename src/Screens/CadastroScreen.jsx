@@ -31,10 +31,10 @@ export default function CadastroScreen({ navigation }) {
         <View style={styles.container}>
             <View style={styles.innerContainer}>
                 <Image
-                    source={require("../assets/fogo.png")}
+                    source={require("../assets/duck.png")}
                     style={{
-                        width: 50,
-                        height: 50,
+                        width: 65,
+                        height: 65,
                         alignSelf: "center",
                     }}
 
@@ -48,6 +48,11 @@ export default function CadastroScreen({ navigation }) {
                     mode="outlined"
                     value={name}
                     onChangeText={setName}
+
+                    style={{
+                        marginTop: 10,
+                        marginBottom: 10,
+                    }}
                 />
 
                 <TextInput
@@ -56,6 +61,10 @@ export default function CadastroScreen({ navigation }) {
                     keyboardType="email-address"
                     value={email}
                     onChangeText={setEmail}
+
+                    style={{
+                        marginBottom: 10,
+                    }}
                 />
 
                 <TextInput
@@ -64,6 +73,9 @@ export default function CadastroScreen({ navigation }) {
                     secureTextEntry
                     value={senha}
                     onChangeText={setSenha}
+                    style={{
+                        marginBottom: 5,
+                    }}
                 />
 
                 <Button
