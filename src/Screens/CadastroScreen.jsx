@@ -87,7 +87,15 @@ export default function CadastroScreen({ navigation }) {
                         backgroundColor: "white",
                     }}
 
-                    onPress={cadastroUsuario}
+                    onPress={() => {
+                        try{ 
+                            cadastroUsuario()
+                            console.error('Usuário cadastrado')
+                            navigation.navigate("LoginScreen")
+                        }catch (error){
+                            console.error(error)
+                        }
+                    }}
                 >
                     Cadastrar
                 </Button>

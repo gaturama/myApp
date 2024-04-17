@@ -3,12 +3,12 @@ import { View } from "react-native";
 import styles from "../config/styles";
 import { Image } from "expo-image";
 import { Text, TextInput, Button } from 'react-native-paper';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import auth from '../config/InitialApp';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import auth from '../config/InitialApp.js'
 
 export default function LoginScreen({ navigation }) {
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
     const login = async () => {
         try {
@@ -36,7 +36,7 @@ export default function LoginScreen({ navigation }) {
                 </Text>
 
                 <TextInput
-                    label="Email"
+                    label="Email" //aleatoria@gmail.com
                     mode="outlined"
                     keyboardType="email-address"
                     value={email}
@@ -47,19 +47,20 @@ export default function LoginScreen({ navigation }) {
                     }}
                 />
                 <TextInput
-                    label="Senha"
+                    label="Senha"//123456
                     mode="outlined"
                     secureTextEntry
                     value={senha}
                     onChangeText={setSenha}
                 />
-                <Button onPress={() => navigation.navigate("CadastroScreen")}
+                <Button
                     style={{
                         marginTop: 10,
                         maxWidth: 130,
                         alignSelf: "center",
                         backgroundColor: "white"
                     }}
+                    onPress={() => navigation.navigate("CadastroScreen")}
                 >
                     Cadastre-se
                 </Button>
